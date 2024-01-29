@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Department {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
