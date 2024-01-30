@@ -10,4 +10,5 @@ public interface DepartmentService { //list of methods pertaining to the service
     public Department fetchDepartmentById(Long id);
     public void deleteDepartmentById(Long id);
     public Department updateDepartment(Long id, Department department);
+    public Department fetchDepartmentByName(String departmentName);
 }
