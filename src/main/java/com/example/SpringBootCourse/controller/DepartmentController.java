@@ -2,6 +2,7 @@ package com.example.SpringBootCourse.controller;
 
 import com.example.SpringBootCourse.entity.Department;
 import com.example.SpringBootCourse.service.DepartmentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,7 @@ public class DepartmentController {
 
     @PostMapping("/departments")
     //the input will take the body of the request and convert it to be a department
-    public Department saveDepartment(@RequestBody Department department) {
+    public Department saveDepartment(@Valid @RequestBody Department department) {
         return departmentService.saveDepartment(department);
     }
 
