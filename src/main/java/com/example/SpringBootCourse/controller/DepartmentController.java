@@ -3,11 +3,12 @@ package com.example.SpringBootCourse.controller;
 import com.example.SpringBootCourse.entity.Department;
 import com.example.SpringBootCourse.service.DepartmentService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController // this is where api methods are defined
 public class DepartmentController {
@@ -15,14 +16,18 @@ public class DepartmentController {
     @Autowired // maps this departmentService to the one that is already in the spring container.
     private DepartmentService departmentService;
 
+    private final Logger LOGGER = LoggerFactory.getLogger( DepartmentController.class);
+
     @PostMapping("/departments")
     //the input will take the body of the request and convert it to be a department
     public Department saveDepartment(@Valid @RequestBody Department department) {
+        LOGGER.info("Inside saveDepartment of DepartmentController");
         return departmentService.saveDepartment(department);
     }
 
     @GetMapping("/departments")
     public List<Department> fetchDepartmentList() {
+        LOGGER.info("Inside fetchDepartmentList of Department Controller")
         return departmentService.fetchDepartments();
     }
 
