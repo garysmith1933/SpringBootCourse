@@ -27,7 +27,7 @@ public class DepartmentController {
 
     @GetMapping("/departments")
     public List<Department> fetchDepartmentList() {
-        LOGGER.info("Inside fetchDepartmentList of Department Controller")
+        LOGGER.info("Inside fetchDepartmentList of Department Controller");
         return departmentService.fetchDepartments();
     }
 
