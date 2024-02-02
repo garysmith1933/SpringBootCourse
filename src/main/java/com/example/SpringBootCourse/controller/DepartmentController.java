@@ -1,6 +1,7 @@
 package com.example.SpringBootCourse.controller;
 
 import com.example.SpringBootCourse.entity.Department;
+import com.example.SpringBootCourse.error.DepartmentNotFoundException;
 import com.example.SpringBootCourse.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -32,7 +33,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/departments/{id}") //dynamic variable, whatever this is will the input as a path variable.
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) {
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
 
