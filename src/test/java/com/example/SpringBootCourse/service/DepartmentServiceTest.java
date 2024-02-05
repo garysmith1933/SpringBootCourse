@@ -3,6 +3,8 @@ package com.example.SpringBootCourse.service;
 import com.example.SpringBootCourse.entity.Department;
 import com.example.SpringBootCourse.repository.DepartmentRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ class DepartmentServiceTest {
     }
 
     @Test
+    @DisplayName("Get Data based on Valid Department Name")
+//    @Disabled - will disable method.
     public void whenValidDepartmentName_thenDepartmentShouldFound() {
         String departmentName = "IT";
         Department found = departmentService.fetchDepartmentByName(departmentName);
