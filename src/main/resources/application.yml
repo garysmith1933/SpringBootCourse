@@ -30,6 +30,12 @@ spring:
     show-sql: true
 welcome:
   message: Hello, My name is Gary!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 ---
 spring:
   config:
