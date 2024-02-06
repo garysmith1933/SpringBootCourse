@@ -1,4 +1,8 @@
+---
 spring:
+  config:
+    activate:
+      on-profile: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
@@ -7,6 +11,40 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: 'true'
+    show-sql: true
 welcome:
   message: Hello, My name is Gary!
+---
+spring:
+  config:
+    activate:
+      on-profile: qa
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Hello, My name is Gary!
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/dcbapp-prod
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Hello, My name is Gary!
+
+
