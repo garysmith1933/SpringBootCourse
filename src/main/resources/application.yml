@@ -1,3 +1,4 @@
+
 ---
 spring:
   config:
@@ -5,9 +6,9 @@ spring:
       on-profile: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/dcbapp
     password: root
+    url: jdbc:mysql://localhost:3306/dcbapp
+    username: root
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,14 +17,13 @@ welcome:
   message: Hello, My name is Gary!
 ---
 spring:
-  config:
-    activate:
-      on-profile: qa
+  profiles:
+      active: qa
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/dcbapp-qa
     password: root
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    username: root
   jpa:
     hibernate:
       ddl-auto: update
@@ -37,14 +37,13 @@ spring:
       on-profile: prod
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/dcbapp-prod
     password: root
+    url: jdbc:mysql://localhost:3306/dcbapp-prod
+    username: root
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
 welcome:
   message: Hello, My name is Gary!
-
 
