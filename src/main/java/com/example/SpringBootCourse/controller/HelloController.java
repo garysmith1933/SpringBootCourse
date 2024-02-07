@@ -15,4 +15,4 @@ public class HelloController {
         return welcomeMessage;
     }
 }
-//spring profile bug - 4:13:00
+//left off at 4:24:33
