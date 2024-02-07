@@ -15,6 +15,11 @@ public class FeatureEndpoint {
 
     private final Map<String, Feature> featureMap = new ConcurrentHashMap<>();
 
+    public FeatureEndpoint() {
+        featureMap.put("Department", new Feature(true));
+        featureMap.put("User", new Feature(false));
+        featureMap.put("Authentication", new Feature(false));
+    }
 
     @Data
     @NoArgsConstructor
