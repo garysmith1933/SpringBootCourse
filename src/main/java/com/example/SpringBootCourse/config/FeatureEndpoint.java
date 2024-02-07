@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.boot.actuate.endpoint.annotation.Selector;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
@@ -27,10 +28,15 @@ public class FeatureEndpoint {
         return featureMap;
     }
 
+    @ReadOperation
+    public Feature feature( @Selector String featureName) {
+        return featureMap.get(featureName);
+    }
+
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    private static class Feature {
+    public static class Feature {
         private boolean isEnabled;
     }
 }
